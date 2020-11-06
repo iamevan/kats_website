@@ -110,116 +110,70 @@ Navbar
 =======================
 */
 .navbar {
-    background-color: var(--color-white);
-    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
     position: fixed;
-    width: 100%;    
-    padding: 0 5rem;
-    z-index: 3;    
-}
-.menu {
-    clear: both;
-    overflow: hidden;
-    background-color: var(--color-white);
-    max-height: 0;
-    transition: max-height .2s ease-out;
-}
-.menu-link {
-    display: block;
-    color: var(--color-medium);
-    font-size: 1.6rem;    
-    padding: 20px;
-}
-.menu-link:hover {
-    color: var(--color-white);    
-    background-color: var(--color-secondary);
-}
-.brand-container {               
-    float: left;
     display: flex;    
-    flex-direction: row-reverse;
-    position: absolute;
-    top: 5px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;    
+    padding: .75rem 5rem;
+    background-color: var(--color-white);
+    overflow: hidden;
+}
+.brand-container {    
+    display: flex;
+    flex-direction: row-reverse;    
+    align-items: center;    
+    height: 100%;    
 }
 .brand-title {
-    letter-spacing: 0.25rem;
     color: var(--color-medium);
+    margin-left: 1.8rem;
+    letter-spacing: 0.15rem;
 }
-.brand-logo {    
-    width: 50px;
-    height: 50px;    
-    margin-right: 2rem;    
-}
-.menu-icon {    
-    padding: 28px 20px;
-    position: relative;
-    float: right;
-    cursor: pointer;    
-}
-.nav-icon {
-    background: #333;
+.brand-logo {
     display: block;
-    height: 2px;
-    width: 18px;
-    position: relative;
-    transition: background .2s ease-out;
+    width: 55px;
+    height: 55px;
 }
-.nav-icon:before {
-    background: #333;
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    top: 5px;    
+.menu {     
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;    
 }
-.nav-icon:after {
-    background: #333;
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    top: -5px;    
+.menu-link { 
+    font-size: 1.6rem;
+    padding: 1rem 3rem;    
+    color: var(--color-medium);
+    transition: all .2s ease;
 }
-.menu-btn {
-    display: none;
-}
-.menu-btn:checked ~ .menu {
-    max-height: 340px;
-}
-.menu-btn:checked ~ .menu-icon .nav-icon {
-    background: transparent;
-}
-.menu-btn:checked ~ .menu-icon .nav-icon:before {
-    transform: rotate(-45deg);
-    top: 0;
-}
-.menu-btn:checked ~ .menu-icon .nav-icon:after {
-    transform: rotate(45deg);
-    top: 0;
+.menu-link:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
 }
 
 /* Media query - Navbar */
-@media screen and (min-width: 1024px) {
-
+@media screen and (max-width: 1000px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .brand-logo {
+        width: 45px;
+        height: 45px;
+    }
     .menu {
-        clear: none;
-        float: right;
-        max-height: none;
+        margin: 2.5rem 0 1.5rem 0;
     }
-    .menu li{
-        float: left;
+}
+@media screen and (max-width: 680px) {    
+    .brand-logo {
+        display: none;
     }
-    .menu-link {
-        padding: 20px 30px;
-    }
-    .menu-icon {
+    .menu {
         display: none;
     }
 }
+
 /*
 =======================
 Header
@@ -290,7 +244,7 @@ Home page
 }
 .about-image {
     display: block;
-    flex: 1 1 40%;
+    flex: 1 1 10%;
     object-fit: cover;    
 }
 .testimonials {        
