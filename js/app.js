@@ -1,22 +1,13 @@
-const hamburger = document.querySelector('.hamburger');
-const sideNav = document.getElementById('side-nav');
-const navLinks = document.querySelector('.nav-links');
-const lines = document.querySelectorAll('.hamburger .line');
-const headerContainer = document.querySelector('.header');
+const hamburger = document.querySelector('.burger-container');
+const burgerLines = document.querySelectorAll('.burger-line');
+const navMenu = document.querySelector('.nav-menu');
 
-// Ed's menu
-
-// hamburger.addEventListener('click', () => {
-//     navLinks.classList.toggle('open');
-
-//     lines.forEach(line => {
-//         line.classList.toggle('color-change');
-//     });
-// });
-
-// Brad's side bar menu
-
-// Toggle nav
+// burger menu toggle
 hamburger.addEventListener('click', () => {
-    headerContainer.classList.toggle('show-nav');
+
+    navMenu.classList.toggle('open');
+
+    burgerLines.forEach(e => {
+        e.classList.toggle('active');
+    });
 });
