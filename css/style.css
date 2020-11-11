@@ -1,5 +1,98 @@
-@import 'globals.css'; /* global resets and variables */
-
+/*
+=======================
+Variables & Resets
+=======================
+*/
+:root {
+    --color-primary: #6aa6a3;
+    --color-secondary: #add5d7;
+    
+    --color-white: #fff;
+    --color-medium: #444;
+    --color-dark: #333;
+    
+    --color-background-1: #f5f5f5;
+    --color-background-2: #e6e6e6;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    /* This defines what 1rem is */
+    font-size: 62.5%;
+}
+body {
+    background: var(--color-background-1);    
+    font-family: 'Open Sans', sans-serif;
+}
+/*
+=======================
+Typography
+=======================
+*/
+h1 {    
+    font-size: 5.6rem;
+    font-weight: 300;    
+}
+h2 {
+    font-size: 3.2rem;
+    font-weight: 600;    
+}
+h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: .15rem;
+}
+h4 {
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: .25rem;
+}
+p {
+    font-size: 1.85rem;
+    margin-bottom: 4rem;
+    letter-spacing: .05rem;
+    line-height: 1.4;
+    max-width: 700px;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.subtitle {
+    font-family: 'Kaushan Script', cursive;    
+    letter-spacing: .25rem;
+    margin-bottom: 12rem;
+    font-weight: 300;
+}
+/*
+=======================
+Utilities
+=======================
+*/
+.container {
+    width: 100%;        
+}
+.container-max-width {
+    max-width: 1440px;
+    margin: 0 auto;    
+}
+.section {        
+    padding: 12rem 5rem;
+    text-align: center;    
+    color: var(--color-medium);
+}
+.fancy-line {    
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+    margin: 4rem auto;
+    width: 80%;
+}
 /*
 =======================
 Header
@@ -7,10 +100,8 @@ Header
 */
 .header {
     position: fixed;
-    width: 100%;
-    height: 80px;
+    width: 100%;    
 }
-
 /*
 =======================
 Navbar
@@ -20,34 +111,32 @@ Navbar
     position: relative;
     display: flex;    
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    align-items: center;    
+    height: 80px;
     padding: 0 5rem;
     background-color: var(--color-white);
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);    
 }
 .brand-container {
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;    
+    align-items: center;        
 }
 .logo-sm {
     display: block;
-    width: 55px;
-    height: 55px;
+    width: 52px;
+    height: 52px;
     margin-right: 2rem;
 }
 .brand-text {
-    color: var(--color-medium);
-    letter-spacing: 0.15rem;        
+    color: var(--color-medium);    
 }
 .by-kat-text {        
-    font-size: 1.9rem;
-    font-weight: lighter;
-    margin-left: 1.6rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin: 0 0 0 1rem;
 }
-.nav-menu {    
+.nav-menu {       
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -64,13 +153,16 @@ Navbar
     border-bottom: 2px solid transparent;
     transition: border-bottom .2s ease-out;
 }
+.menu-li:nth-child(5) {
+    display: none;
+}
 .menu-links:hover {
     border-bottom: 2px solid var(--color-primary);
 }
 .btn-contact {     
     padding: .65rem 1.8rem;
-    font-size: 1.7rem;    
-    letter-spacing: 0.1rem;
+    font-size: 1.6rem;    
+    letter-spacing: 0.09rem;
     color: var(--color-white);
     background-color: var(--color-secondary);
     cursor: pointer;
@@ -90,7 +182,7 @@ Navbar
 .burger-line {
     display: block;
     background-color: var(--color-medium);
-    width: 30px;
+    width: 26px;
     height: 4px;
     margin: 2px;
     border-radius: 2px;
@@ -98,20 +190,39 @@ Navbar
 .burger-line.active {
     margin: 4px;
 }
-
 /* Navbar media queries */
-@media screen and (max-width: 600px) {
-    .nav-menu {
-        position: absolute;
-        flex-direction: column;
-        top: 80px;
-        left: -100%;
-        height: 420px;
-        background-color: #fff;
-        transition: left .35s ease-out;
+@media screen and (max-width: 1399px) {
+    .by-kat-text {
+        display: block;
+        margin: -0.5rem 0 0 0.1rem;
     }
-    .nav-menu.open {
-        left: 0;
+}
+@media screen and (max-width: 1119px) {
+    .by-kat-text {
+        display: inline;
+        margin: 0 0 0 1rem;
+    }
+    .nav {
+        flex-direction: column;
+        height: 140px;
+        padding: 1rem 5rem;
+    }
+    .nav-menu {
+        justify-content: space-between;
+        margin: 2rem 0;
+        width: 100%;        
+    }
+    .menu-li:nth-child(5) {
+        display: list-item;
+    }
+    .btn-contact {
+        display: none;
+    }
+}
+@media screen and (max-width: 679px) {
+    .nav {
+        flex-direction: row;
+        height: 80px;
     }
     .logo-sm {
         display: none;
@@ -119,15 +230,40 @@ Navbar
     .by-kat-text {
         display: none;
     }
-    .btn-contact {
-        display: none;
+    .nav-menu {        
+        position: absolute;
+        top: 80px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-evenly;
+        margin: 0;
+        background-color: var(--color-white);
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+    }
+    .nav-menu.open {        
+        transform: translateX(0);
+    }
+    .menu-li {
+        padding: 2rem 0;
     }
     .burger-container {
         display: flex;
     }
 }
-
-
+/*
+=======================
+Background image
+=======================
+*/
+.background-image {
+    height: 50vh;
+    background-image: url('../images/health-and-soul-logo-large.png'), url('../images/background-desktop.jpg');
+    background-repeat: no-repeat no-repeat;
+    background-size: contain, cover;
+    background-position: right, center;
+}
 /*
 =======================
 Home page
@@ -183,5 +319,6 @@ Footer
 .footer {
     padding: 12rem 5rem;
     color: var(--color-white);
+    background-color: var(--color-secondary);
     text-align: center;    
 }
