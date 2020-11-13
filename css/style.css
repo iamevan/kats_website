@@ -75,16 +75,18 @@ Utilities
 =======================
 */
 .container {
-    width: 100%;        
+    width: 100%;            
 }
 .container-max-width {
-    max-width: 1440px;
-    margin: 0 auto;    
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12rem 5rem;
+    /* border: 1px solid lightblue;     */
 }
 .section {        
     padding: 12rem 5rem;
     text-align: center;    
-    color: var(--color-medium);
+    color: var(--color-medium);    
 }
 .fancy-line {    
     border: 0;
@@ -112,15 +114,15 @@ Navbar
     display: flex;    
     justify-content: space-between;
     align-items: center;    
-    height: 80px;
-    padding: 0 5rem;
+    padding: 2rem 5rem;
     background-color: var(--color-white);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);    
 }
 .brand-container {
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;        
+    align-items: center;
+    border: 1px solid lightblue;        
 }
 .logo-sm {
     display: block;
@@ -138,9 +140,10 @@ Navbar
 }
 .nav-menu {       
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 50%;                
+    width: 60%;    
+    margin-top: 1.6rem;                
 }
 .nav-menu.display {
     display: flex;
@@ -148,27 +151,11 @@ Navbar
 }
 .menu-links {
     font-size: 1.6rem;
-    color: var(--color-medium);
-    padding-bottom: .5rem;
+    color: var(--color-medium);    
+    padding-bottom: .5rem;    
     border-bottom: 2px solid transparent;
-    transition: border-bottom .2s ease-out;
+    transition: border-bottom .2s ease-out;    
 }
-.menu-li:nth-child(5) {
-    display: none;
-}
-.menu-links:hover {
-    border-bottom: 2px solid var(--color-primary);
-}
-.btn-contact {     
-    padding: .65rem 1.8rem;
-    font-size: 1.6rem;    
-    letter-spacing: 0.09rem;
-    color: var(--color-white);
-    background-color: var(--color-secondary);
-    cursor: pointer;
-    border: none;    
-}
-
 /* Burger functionality */
 .burger-container {
     display: none;
@@ -182,8 +169,8 @@ Navbar
 .burger-line {
     display: block;
     background-color: var(--color-medium);
-    width: 26px;
-    height: 4px;
+    width: 24px;
+    height: 3px;
     margin: 2px;
     border-radius: 2px;
 }
@@ -191,13 +178,13 @@ Navbar
     margin: 4px;
 }
 /* Navbar media queries */
-@media screen and (max-width: 1399px) {
+@media screen and (max-width: 1259px) {
     .by-kat-text {
         display: block;
         margin: -0.5rem 0 0 0.1rem;
     }
 }
-@media screen and (max-width: 1119px) {
+@media screen and (max-width: 1023px) {
     .by-kat-text {
         display: inline;
         margin: 0 0 0 1rem;
@@ -212,17 +199,14 @@ Navbar
         margin: 2rem 0;
         width: 100%;        
     }
-    .menu-li:nth-child(5) {
-        display: list-item;
-    }
-    .btn-contact {
-        display: none;
-    }
 }
 @media screen and (max-width: 679px) {
     .nav {
         flex-direction: row;
         height: 80px;
+    }
+    .brand-text {
+        font-size: 2.8rem;
     }
     .logo-sm {
         display: none;
@@ -269,32 +253,36 @@ Background image
 Home page
 =======================
 */
-.welcome-container {
+.section-flex {
     display: flex;
+    flex-direction: column;        
+}
+.heading-container {    
+    text-align: center;    
+}
+.content-container {
+    display: flex;    
+}
+.flex-row-reverse {
     flex-direction: row-reverse;
 }
-.welcome-container .paragraph-container {
-    flex: 1 1 75%;
-    padding-left: 12rem;
-    text-align: left;
+.paragraph-container {
+    padding: 5rem 0 0 6rem;
+    width: 80%;    
 }
 .welcome-image {
     display: block;
-    flex: 1 1 25%;
-    object-fit: cover;    
+    width: 20%; 
+    object-fit: cover;   
+    /* background-color: lightpink; */
 }
-.about-container {
-    display: flex;
-    flex-direction: row;
-}
-.about-container .paragraph-container {
-    flex: 1 1 60%;
-    padding-right: 12rem;
-    text-align: left;
+.footer-container {
+    text-align: center;
+    /* background-color: lightsalmon; */
 }
 .about-image {
-    display: block;
-    flex: 1 1 10%;
+    display: block;    
+    width: 20%;
     object-fit: cover;    
 }
 .testimonials {        
