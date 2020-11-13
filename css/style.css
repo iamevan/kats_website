@@ -95,6 +95,23 @@ Utilities
     margin: 4rem auto;
     width: 80%;
 }
+.pad-l-8 { padding-left: 8rem }
+.pd-r-lrg { padding-right: 8rem }
+.pd-t-lrg { padding-top: 8rem }
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+.btn {
+    font-size: 1.7rem;
+    font-weight: 400;
+    letter-spacing: 0.12rem;
+    color: var(--color-white);
+    background-color: #add5d7;
+    border: none;    
+    margin-top: 8rem;
+    padding: .75rem 2rem;
+    cursor: pointer;        
+}
 /*
 =======================
 Header
@@ -121,8 +138,7 @@ Navbar
 .brand-container {
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
-    border: 1px solid lightblue;        
+    align-items: center;            
 }
 .logo-sm {
     display: block;
@@ -133,17 +149,17 @@ Navbar
 .brand-text {
     color: var(--color-medium);    
 }
-.by-kat-text {        
+.by-kat-text {
+    display: block;        
     font-size: 1.7rem;
     font-weight: 400;
-    margin: 0 0 0 1rem;
+    margin-top: -.5rem;    
 }
 .nav-menu {       
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 60%;    
-    margin-top: 1.6rem;                
+    width: 60%;                    
 }
 .nav-menu.display {
     display: flex;
@@ -250,40 +266,63 @@ Background image
 }
 /*
 =======================
+Background image
+=======================
+*/
+.main-title-container {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.main-title {
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 0.05rem;
+    color: var(--color-primary);
+    max-width: 680px;        
+}
+/*
+=======================
 Home page
 =======================
 */
 .section-flex {
     display: flex;
-    flex-direction: column;        
+    flex-direction: column;
 }
 .heading-container {    
     text-align: center;    
 }
 .content-container {
     display: flex;    
+    background-color: rgb(238, 238, 238);
 }
-.flex-row-reverse {
-    flex-direction: row-reverse;
-}
-.paragraph-container {
-    padding: 5rem 0 0 6rem;
-    width: 80%;    
+.paragraph-container-1 {    
+    width: 80%;
+    padding: 8rem;    
 }
 .welcome-image {
     display: block;
     width: 20%; 
-    object-fit: cover;   
-    /* background-color: lightpink; */
+    object-fit: cover;
+    margin: -6rem -4rem 0 0;
+    padding: 2rem;   
 }
 .footer-container {
-    text-align: center;
-    /* background-color: lightsalmon; */
+    text-align: center;    
+}
+.paragraph-container-2 {    
+    width: 70%;
+    padding: 8rem;    
 }
 .about-image {
     display: block;    
-    width: 20%;
+    width: 30%;
     object-fit: cover;    
+    margin: -10rem 0 0 -4rem;
+    padding: 4rem;
 }
 .testimonials {        
     padding: 12rem 5rem;
@@ -305,8 +344,21 @@ Footer
 =======================
 */
 .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
     padding: 12rem 5rem;
     color: var(--color-white);
-    background-color: var(--color-secondary);
-    text-align: center;    
+    background-color: var(--color-secondary);    
+}
+.footer img {
+    display: block;    
+    width: 40px;       
+}
+.footer p {
+    margin: 1rem 0 4rem 0;
+}
+.footer h4 {
+    margin-top: 4rem;
 }
