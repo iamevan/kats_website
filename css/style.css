@@ -101,20 +101,37 @@ Utilities
 .flex-row-reverse {
     flex-direction: row-reverse;
 }
-.btn,
 .btn-contact {
     font-size: 1.7rem;
-    font-weight: 400;
-    letter-spacing: 0.12rem;
-    color: var(--color-white);
-    background-color: #add5d7;
-    border: none;    
-    margin-top: 8rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    color: var(--color-secondary);
+    background-color: transparent;
+    border: 2px solid #add5d7;
     padding: .65rem 2rem;
-    cursor: pointer;        
+    cursor: pointer;
+    border-radius: 4px;
+    
+    transition: all .25s ease;
 }
-.btn-contact {
-    margin: 0;
+.btn-contact:hover {
+    background-color:  #add5d7;
+    color: var(--color-white);
+}
+.btn-link {    
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    color: var(--color-medium);
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .25s ease;    
+}
+.btn-link:hover {
+    border-bottom: 2px solid var(--color-primary);
+}
+.icons {
+    width: 25px;
+    opacity: 65%;        
 }
 /*
 =======================
@@ -175,7 +192,10 @@ Navbar
     color: var(--color-medium);    
     padding-bottom: .5rem;    
     border-bottom: 2px solid transparent;
-    transition: border-bottom .2s ease-out;    
+    transition: border-bottom .25s ease-out;    
+}
+.menu-links:hover {
+    border-bottom: 2px solid var(--color-primary);
 }
 /* Burger functionality */
 .burger-container {
